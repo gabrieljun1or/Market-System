@@ -16,13 +16,13 @@ public class Cliente {
     private long Id;
     @NotBlank(message = "nome is mandatory")
     private String nome;
-    @NotBlank(message = "CPF,CNPJ is mandatory")
-    private String CPF,CNPJ;
+    @NotBlank(message = "CPF is mandatory")
+    private int CPF;
     @NotBlank(message = "Endereço is mandatory")
     private String Endereco;
     @NotBlank(message = "Telefone is mandatory")
-    private String Telefone;
+    private int Telefone;
     @NotBlank(message = "Email is mandatory")
     private String Email;
-    
+
 }
