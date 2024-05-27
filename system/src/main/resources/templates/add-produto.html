@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Registro de produto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <nav class="navbar navbar-dark bg-primary"><a class="navbar-brand" href="#">Dados cadastrais</a></nav>
+<body>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="bg-primary text-white px-5 py-3 my-5">Dados do produto</h2>
+            <div class ="col-lg-12 col-md-12 col-sm-12 container justify-content-center card">
+                <form action="#" th:action="@{/add-produto}" th:object="${produto}" method="post" enctype="multipart/form-data">
+                                        <div class="form-group">
+                        <label for="name" class="font-weight-bold">nome</label>
+                        <input type="text" th:value="${produto.name}" name="name" id="name" placeholder="nome" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="unidade" class="font-weight-bold">unidade</label>
+                        <input type="text" th:value="${produto.unidade}" name="unidade" id="unidade" placeholder="unidade" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="valor" class="font-weight-bold">valor</label>
+                        <input type="text" th:value="${produto.valor}" name="valor" id="valor" placeholder="valor" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="ncm" class="font-weight-bold">ncm</label>
+                        <input type="text" th:value="${produto.ncm}" name="ncm" id="ncm" placeholder="ncm" class="form-control">
+                    </div>
+
+                    <input type="submit" class="btn btn-primary my-5" value="salvar">
+                    <a class="btn btn-primary my-5" th:href="@{/produto}">Lista</a>
+                </form>
+                <span>&copy;by: Gabriel Jun1or -1.0 beta | Todos os direitos reservados</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<nav class="navbar navbar-light" style="background-color: #39419e;"></nav>
+</html>

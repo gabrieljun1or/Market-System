@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Market</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <nav class="navbar navbar-dark bg-primary"><a class="navbar-brand" href="#">Market Management System</a></nav>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+<div th:switch="${#lists.isEmpty(cliente)}" class="container my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div th:case="*">
+                <h2 class="bg-primary text-white px-1 py-1 my-3 my-3">Clientes</h2>
+                <form action="#" th:action="@{/index}" th:object="${model}" method="post" enctype="multipart/form-data">
+                    <div class="form-row my-5">
+                        <div class="col-md-4">
+                        </div>
+                    </div>
+                </form>
+                <div class = "col-lg-3">
+                    <a th:href = "@{/add-cliente}" class = "btn btn-primary btn-sm mb-3">Cadastrar Cliente</a>
+                </div>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>nome</th>
+                        <th>doc</th>
+                        <th>endereco</th>
+                        <th>telefone</th>
+                        <th>Actions / bars</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="cliente : ${cliente}">
+                        <td th:text="${cliente.nome}"></td>
+                        <td th:text="${cliente.doc}"></td>
+                        <td th:text="${cliente.endereco}"></td>
+                        <td th:text="${cliente.telefone}"></td>
+                        <td><a th:href="@{/delete/{id}(id=${cliente.id})}"class = "btn btn-danger">Excluir</a>
+                            <a th:href="@{/editCliente/{id}(id=${cliente.id})}"class = "btn btn-primary">Editar</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <p class="text-center my-5"><a href="/add-cliente" class="btn btn-primary">Voltar</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

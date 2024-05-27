@@ -12,17 +12,14 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "tb_clientes")
 public class Cliente {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private long Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @NotBlank(message = "nome is mandatory")
     private String nome;
-    @NotBlank(message = "CPF is mandatory")
-    private int CPF;
+    @NotBlank(message = "doc is mandatory")
+    private String doc;
     @NotBlank(message = "Endereço is mandatory")
-    private String Endereco;
+    private String endereco;
     @NotBlank(message = "Telefone is mandatory")
-    private int Telefone;
-    @NotBlank(message = "Email is mandatory")
-    private String Email;
-
+    private String telefone;
 }
